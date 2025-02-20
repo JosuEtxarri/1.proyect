@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+nav{
+
+    background-color: rgb(65, 65, 65);
+    color: white;
+    display: flex;
+    justify-content: center;
+
+
+    div{
+        padding: 15px;
+    }
+
+
+    button{
+        color: white;
+        padding: 0;
+        border: none;
+        background: none;
+        font-size: medium;
+    }
+
+    a{
+        color: white;
+    }
+
+}
+
+
+
+
+
+
+.form{
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+header{
+    text-align: center;
+    margin-top: 100px;
+}
+
+main{
+    background-color: white;
+    margin-top: 30px;
+    max-width: 400px;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 40px;
+    box-shadow: 0px 0px 3px grey;
+
+}
+
+
+.form-row{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+
+
+    label{
+        padding-top: 5px;
+        padding-bottom: 4px;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+
+
+    input{
+        margin-right: 2px;
+        margin-left: 10px;
+    }
+
+    input[type=password], input[type=text], input[type=email], select, button{
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 8px;
+        border: solid #ccc;
+        border-radius: 4px;
+        border-width: 1.5px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    button{
+        background-color: #3383ff;
+        color: white;
+        border: unset;
+    }
+}
+
