@@ -6,11 +6,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="personalaizer.css">
 </head>
-<body>
+<body id="bottom" >
     
-    <nav>
+    <nav >
         <div>
-            <button>Personalizer</button>
+            <button onclick="open_editor()">Personalizer</button>
         </div>
         <div>
             <a href="form.html">Form</a>
@@ -20,6 +20,7 @@
         </div>
     </nav>
 
+<div class="test">
     <main>
         <div class="main">
             <h1>Welcome to Personalizer</h1>
@@ -28,42 +29,96 @@
         </div>
     </main>
 
-    <div class="editor">
+    <div class="editor" id="editor">
+        <div>
+            <button class="editor_close" id="editor_close" onclick="close_editor()">X</button>
+        </div>
         <div class="bg_color">
             <p>Bg_color</p>
-            <button class="bg_red"></button>
-            <button class="bg_green"></button>
-            <button class="bg_blue"></button>
-            <button class="bg_grey"></button>
-            <button class="bg_white"></button>
+            <button class="bg_red" onclick="bg_red()"></button>
+            <button class="bg_green" onclick="bg_green()"></button>
+            <button class="bg_blue" onclick="bg_blue()"></button>
+            <button class="bg_grey" onclick="bg_grey()"></button>
+            <button class="bg_white" onclick="bg_white()"></button>
         </div>
         <div>
-            <p>Change_letters</p>
+            <p class="lt_text">Change_letters</p>
         </div>
     
         <div class="lt_color">
-            <button class="lt_red"></button>
-            <button class="lt_green"></button>
-            <button class="lt_blue"></button>
-            <button class="lt_grey"></button>
-            <button class="lt_white"></button>
+            <button class="lt_red" onclick="lt_red()"></button>
+            <button class="lt_green" onclick="lt_green()"></button>
+            <button class="lt_blue" onclick="lt_blue()"></button>
+            <button class="lt_grey" onclick="lt_grey()"></button>
+            <button class="lt_white" onclick="lt_white()"></button>
         </div>
         <div class="lt_size">
-            <button class="lt_xs">XS</button>
-            <button class="lt_s">S</button>
-            <button class="lt_m">M</button>
-            <button class="lt_l">L</button>
-            <button class="lt_xl">XL</button>
+            <button class="lt_xs" onclick="lt_xs()">XS</button>
+            <button class="lt_s" onclick="lt_s()">S</button>
+            <button class="lt_m" onclick="lt_m()">M</button>
+            <button class="lt_l" onclick="lt_l()">L</button>
+            <button class="lt_xl" onclick="lt_xl()">XL</button>
         </div>
         <div class="lt_font">
-            <button class="lt_arial">A</button>
-            <button class="lt_times">T</button>
-            <button class="lt_courier">C</button>
-            <button class="lt_verdana">F</button>
-            <button class="lt_trebuchet">M</button>
+            <button class="lt_arial" onclick="lt_arial()">A</button>
+            <button class="lt_times" onclick="lt_times()">T</button>
+            <button class="lt_courier" onclick="lt_courier()">C</button>
+            <button class="lt_verdana" onclick="lt_verdana()">F</button>
+            <button class="lt_trebuchet" onclick="lt_red()">M</button>
         </div>
     </div>
     </div>
+</div>
+
+<script>
+
+    function open_editor(){
+        document.getElementById("editor").style.display = "inline"
+    }    
+
+    function close_editor() {
+        document.getElementById("editor").style.display = "none"
+    }
+
+    function bg_red() {
+        document.getElementById("bottom").style.backgroundColor = "#ff5956"
+
+    }
+    function bg_green() {
+        document.getElementById("bottom").style.backgroundColor = "#84ff56"
+
+    }
+    function bg_blue() {
+        document.getElementById("bottom").style.backgroundColor = "#56acff"
+
+    }
+    function bg_grey() {
+        document.getElementById("bottom").style.backgroundColor = "#c3c3c3"
+
+    }
+
+    function bg_white() {
+        document.getElementById("bottom").style.backgroundColor = "#ffff"
+
+    }
+
+    function lt_red() {
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
 
 
 </body>
