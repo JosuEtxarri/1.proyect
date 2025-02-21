@@ -20,7 +20,7 @@
         </div>
     </nav>
 
-<div class="test">
+<div class="test" id="test">
     <main>
         <div class="main">
             <h1>Welcome to Personalizer</h1>
@@ -35,36 +35,36 @@
         </div>
         <div class="bg_color">
             <p>Bg_color</p>
-            <button class="bg_red" onclick="bg_red()"></button>
-            <button class="bg_green" onclick="bg_green()"></button>
-            <button class="bg_blue" onclick="bg_blue()"></button>
-            <button class="bg_grey" onclick="bg_grey()"></button>
-            <button class="bg_white" onclick="bg_white()"></button>
+            <button id="bg_red" onclick="bg_color('red')"></button>
+            <button id="bg_green" onclick="bg_color('green')"></button>
+            <button id="bg_blue" onclick="bg_color('blue')"></button>
+            <button id="bg_grey" onclick="bg_color('grey')"></button>
+            <button id="bg_white" onclick="bg_color('white')"></button>
         </div>
         <div>
             <p class="lt_text">Change_letters</p>
         </div>
     
         <div class="lt_color">
-            <button class="lt_red" onclick="lt_red()"></button>
-            <button class="lt_green" onclick="lt_green()"></button>
-            <button class="lt_blue" onclick="lt_blue()"></button>
-            <button class="lt_grey" onclick="lt_grey()"></button>
-            <button class="lt_white" onclick="lt_white()"></button>
+            <button class="lt_red" onclick="lt_red('red') "></button>
+            <button class="lt_green" onclick="lt_green('green')"></button>
+            <button class="lt_blue" onclick="lt_blue('blue')"></button>
+            <button class="lt_grey" onclick="lt_grey('grey')"></button>
+            <button class="lt_white" onclick="lt_white('white')"></button>
         </div>
         <div class="lt_size">
-            <button class="lt_xs" onclick="lt_xs()">XS</button>
-            <button class="lt_s" onclick="lt_s()">S</button>
-            <button class="lt_m" onclick="lt_m()">M</button>
-            <button class="lt_l" onclick="lt_l()">L</button>
-            <button class="lt_xl" onclick="lt_xl()">XL</button>
+            <button class="lt_xs" onclick="lt_xs('xs')">XS</button>
+            <button class="lt_s" onclick="lt_s('s')">S</button>
+            <button class="lt_m" onclick="lt_m('m')">M</button>
+            <button class="lt_l" onclick="lt_l('l')">L</button>
+            <button class="lt_xl" onclick="lt_xl('xl')">XL</button>
         </div>
         <div class="lt_font">
-            <button class="lt_arial" onclick="lt_arial()">A</button>
-            <button class="lt_times" onclick="lt_times()">T</button>
-            <button class="lt_courier" onclick="lt_courier()">C</button>
-            <button class="lt_verdana" onclick="lt_verdana()">F</button>
-            <button class="lt_trebuchet" onclick="lt_red()">M</button>
+            <button class="lt_arial" onclick="lt_arial('a')">A</button>
+            <button class="lt_times" onclick="lt_times('t')">T</button>
+            <button class="lt_courier" onclick="lt_courier('c')">C</button>
+            <button class="lt_verdana" onclick="lt_verdana('f')">F</button>
+            <button class="lt_trebuchet" onclick="lt_red('m')">M</button>
         </div>
     </div>
     </div>
@@ -80,36 +80,40 @@
         document.getElementById("editor").style.display = "none"
     }
 
-    function bg_red() {
-        document.getElementById("bottom").style.backgroundColor = "#ff5956"
 
-    }
-    function bg_green() {
-        document.getElementById("bottom").style.backgroundColor = "#84ff56"
+    function bg_color(a) {
 
-    }
-    function bg_blue() {
-        document.getElementById("bottom").style.backgroundColor = "#56acff"
-
-    }
-    function bg_grey() {
-        document.getElementById("bottom").style.backgroundColor = "#c3c3c3"
-
-    }
-
-    function bg_white() {
-        document.getElementById("bottom").style.backgroundColor = "#ffff"
+        switch (a){
+            case 'red' : document.getElementById("bottom").style.backgroundColor = "#ff5956"
+            break;
+            case 'green' : document.getElementById("bottom").style.backgroundColor = "#84ff56"
+            break;
+            case 'blue' : document.getElementById("bottom").style.backgroundColor = "#56acff"
+            break;
+            case 'grey' : document.getElementById("bottom").style.backgroundColor = "#c3c3c3"
+            break;
+            case 'white' : document.getElementById("bottom").style.backgroundColor = "#ffff"
+            break;
+        }
 
     }
 
-    function lt_red() {
-        
-    }
+    function lt_red(a) {
 
+        switch (a){
+            case 'red' : document.getElementById("test").style.Color = "#ff5956"
+            break;
+            case 'green' : document.getElementsByTagName("p").style.Color = "#84ff56"
+            break;
+            case 'blue' : document.getElementsByTagName("p").style.Color = "#56acff"
+            break;
+            case 'grey' : document.getElementsByTagName("p").style.Color = "#c3c3c3"
+            break;
+            case 'white' : document.getElementsByTagName("p").style.Color = "#ffff"
+            break;
+}
 
-
-
-
+}
 
 
 

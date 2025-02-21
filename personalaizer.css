@@ -71,16 +71,16 @@ main{
         margin-top: 5px;
     }
 
-    .bg_red{
+    #bg_red{
         background-color: lightcoral;
     }
-    .bg_green{
+    #bg_green{
         background-color: lightgreen;
     }
-    .bg_blue{
+    #bg_blue{
         background-color: lightblue;
     }
-    .bg_grey{
+    #bg_grey{
         background-color: grey;
     }
 
