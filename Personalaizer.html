@@ -22,7 +22,7 @@
 
 <div class="test" id="test">
     <main>
-        <div class="main">
+        <div class="main" id="main">
             <h1>Welcome to Personalizer</h1>
             <p>This is a paragraph you can adapt its content.</p>
             <p>Click to Personalizer banner.</p>
@@ -46,25 +46,25 @@
         </div>
     
         <div class="lt_color">
-            <button class="lt_red" onclick="lt_red('red') "></button>
-            <button class="lt_green" onclick="lt_green('green')"></button>
-            <button class="lt_blue" onclick="lt_blue('blue')"></button>
-            <button class="lt_grey" onclick="lt_grey('grey')"></button>
-            <button class="lt_white" onclick="lt_white('white')"></button>
+            <button class="lt_red" onclick="lt_color('red') "></button>
+            <button class="lt_green" onclick="lt_color('green')"></button>
+            <button class="lt_blue" onclick="lt_color('blue')"></button>
+            <button class="lt_grey" onclick="lt_color('black')"></button>
+            <button class="lt_white" onclick="lt_color('white')"></button>
         </div>
         <div class="lt_size">
-            <button class="lt_xs" onclick="lt_xs('xs')">XS</button>
-            <button class="lt_s" onclick="lt_s('s')">S</button>
-            <button class="lt_m" onclick="lt_m('m')">M</button>
-            <button class="lt_l" onclick="lt_l('l')">L</button>
-            <button class="lt_xl" onclick="lt_xl('xl')">XL</button>
+            <button class="lt_xs" onclick="lt_size('xs')">XS</button>
+            <button class="lt_s" onclick="lt_size('s')">S</button>
+            <button class="lt_m" onclick="lt_size('m')">M</button>
+            <button class="lt_l" onclick="lt_size('l')">L</button>
+            <button class="lt_xl" onclick="lt_size('xl')">XL</button>
         </div>
         <div class="lt_font">
-            <button class="lt_arial" onclick="lt_arial('a')">A</button>
-            <button class="lt_times" onclick="lt_times('t')">T</button>
-            <button class="lt_courier" onclick="lt_courier('c')">C</button>
-            <button class="lt_verdana" onclick="lt_verdana('f')">F</button>
-            <button class="lt_trebuchet" onclick="lt_red('m')">M</button>
+            <button class="lt_arial" onclick="lt_font('a')">A</button>
+            <button class="lt_times" onclick="lt_font('t')">T</button>
+            <button class="lt_courier" onclick="lt_font('c')">C</button>
+            <button class="lt_verdana" onclick="lt_font('f')">F</button>
+            <button class="lt_trebuchet" onclick="lt_font('v')">V</button>
         </div>
     </div>
     </div>
@@ -98,23 +98,55 @@
 
     }
 
-    function lt_red(a) {
+    function lt_color(b) {
 
-        switch (a){
-            case 'red' : document.getElementById("test").style.Color = "#ff5956"
+        switch (b){
+            case 'red' : document.getElementById("main").style.color = "#ff5956";
             break;
-            case 'green' : document.getElementsByTagName("p").style.Color = "#84ff56"
+            case 'green' : document.getElementById("main").style.color = "#84ff56";
             break;
-            case 'blue' : document.getElementsByTagName("p").style.Color = "#56acff"
+            case 'blue' : document.getElementById("main").style.color = "#56acff";
             break;
-            case 'grey' : document.getElementsByTagName("p").style.Color = "#c3c3c3"
+            case 'black' : document.getElementById("main").style.color = "black";
             break;
-            case 'white' : document.getElementsByTagName("p").style.Color = "#ffff"
+            case 'white' : document.getElementById("main").style.color = "#ffff";
             break;
+        }
+
+    }
+
+            function lt_size(c) {
+
+        switch (c){
+            case 'xs' : document.getElementById("main").style.fontSize = "8px";
+            break;
+            case 's' : document.getElementById("main").style.fontSize = "12px";
+            break;
+            case 'm' : document.getElementById("main").style.fontSize = "15px";
+            break;
+            case 'l' : document.getElementById("main").style.fontSize = "20px";
+            break;
+            case 'xl' : document.getElementById("main").style.fontSize = "25px";
+            break;
+        } 
+    }
+
+        function lt_font(d) { 
+
+        switch (d){
+            case 'a' : document.getElementById("main").style.fontFamily = "Arial, Helvetica, sans-serif";
+            break;
+            case 't' : document.getElementById("main").style.fontFamily = "'Times New Roman', Times, serif";
+            break;
+            case 'c' : document.getElementById("main").style.fontFamily = "'Courier New', Courier, monospace";
+            break;
+            case 'f' : document.getElementById("main").style.fontFamily = "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+            break;
+            case 'v' : document.getElementById("main").style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif";
+            break;
+            default : document.getElementById("main").style.fontFamily = "Arial, Helvetica, sans-serif";
+        }
 }
-
-}
-
 
 
 
