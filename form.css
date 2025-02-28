@@ -112,3 +112,15 @@ main{
     }
 }
 
+
+#province_div, #city_div{
+    display: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+
+/* Epic dark mode */

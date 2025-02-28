@@ -21,9 +21,16 @@
         <div>
             <button>Mode</button>
         </div>
+        <div>
+          <button onclick="dark_light()" id="dark_light">Dark</button>
+      </div>
     </nav>
-    <div class="form">
-    <main class="form-container">
+
+
+
+
+    <div class="form" id="form">
+    <main class="form-container" id="form-container">
         <form>
           <div class="form-row">
             <label for="name">Full Name:</label>
@@ -74,36 +81,58 @@
             <select id="country" name="country">
               <option value="">Select your country</option>
               <option value="eh">Euskal Herria</option>
-              <option value="srb">Greece</option>
+              <option value="gre">Greece</option>
               <option value="por">Portugal</option>
-              <option value="khz">Kazhagistan</option>
             </select>
           </div>
     
-          <div class="form-row">
+          <div class="form-row" id="province_div">
             <label for="province">Province:</label>
             <select id="province" name="province">
-              <option value="">Select your province</option>
-              <option value="nav">Nafarroa</option>
-              <option value="biz">Bizkaia</option>
-              <option value="gip">Gipuzkoa</option>
-              <option value="ara">Araba</option>
-              <option value="lap">Lapurdi</option>
-              <option value="zub">Zuberoa</option>
-              <option value="corf">Non Associated Estate of Corfu</option>
-            </select>
+      
+              <!-- Euskal Herria -->
+              <option value="" class="eh">Select your province</option>
+              <option value="nav" class="eh">Nafarroa</option>
+              <option value="biz" class="eh">Bizkaia</option>
+              <option value="gip" class="eh">Gipuzkoa</option>
+              <option value="ara" class="eh">Araba</option>
+              <option value="lap" class="eh">Lapurdi</option>
+              <option value="zub" class="eh">Zuberoa</option>
+      
+              <!-- Greece -->
+              <option value="" class="gre">Select your province</option>
+              <option value="jon" class="gre">Jonic Islands</option>
+              <option value="mac" class="gre">Macedonia (the good one)</option>
+              <option value="pel" class="gre">Peloponese</option>
+              <option value="cre" class="gre">Creta</option>
+              
+              <!-- Portugal -->
+              <option value="" class="por">Select your province</option>
+              <option value="lis" class="por">Lisboa</option>
+              <option value="bra" class="por">Braga</option>
+              <option value="cri" class="por">Cristiano Ronaldo SIUUU!</option>
+          </select>
           </div>
 
-          <div class="form-row">
+          <div class="form-row" id="city_div">
             <label for="city">City:</label>
             <select id="city" name="city">
-              <option value="">Select your province</option>
-              <option value="pamp">Iruña/Pamplona</option>
-              <option value="gare">Gares</option>
-              <option value="abli">Ablitas</option>
-              <option value="tafa">Tafalla</option>
-              <option value="mira">Miranda Arga</option>              
-            </select>
+
+              <!-- Nafarroa -->
+              <option value="" class="nav">Select your city</option>
+              <option value="pamp" class="nav">Iruña/Pamplona</option>
+              <option value="gare" class="nav">Gares</option>
+              <option value="abli" class="nav">Ablitas</option>
+              <option value="tafa" class="nav">Tafalla</option>
+              <option value="mira" class="nav">Miranda Arga</option>
+
+              <!-- Pelponese-->
+              <option value="" class="jon">Select your city</option>
+              <option value="corf" class="jon">Corfu</option>
+
+
+          </select>
+
           </div>          
 
 
@@ -117,37 +146,108 @@
 
     <script>
 
+      // email.
+
       document.getElementById("email").addEventListener('input', function() {
         let email = this.value;
-        let email_message = document.getElementById('email_message');
-        let email_pattern = /^[^@]+@[^@]+\.[a-zA-Z]{2,3}$/;
+        let email_pattern = /^[^@]+@[^@]+\.[a-zA-Z]{2,3}$/;  //Spyros... we had to discover this pattern? This is pure chatgpt...
 
         if (!email_pattern.test(email)) {
-          email_message.textContent = "The pattern is incorrect! Try *@*.___ (2-3 characters after de dot.)";
-          email_message.style.color = "red"
+          document.getElementById('email_message').textContent = "The pattern is incorrect! Try *@*.___ (2-3 characters after de dot.)";
+          document.getElementById('email_message').style.color = "red"
         }
         else {
-          email_message.textContent = "Email accepted.";
-          email_message.style.color = "green";
+          document.getElementById('email_message').textContent = "Email accepted.";
+          document.getElementById('email_message').style.color = "green";
         }
 
       });
 
-      document.getElementById("Country").addEventListener('change', function() {
-          let country = this.value;
-          let select_province = document.getElementById("province")
-
-          //....//
+          
+      // Provinces
 
 
 
+    document.getElementById("country").addEventListener('input', function() {
+    let country = this.value;
+
+    if (country == "eh" || country == "gre") {
+        document.getElementById("province_div").style.display = "block";
+
+        let province_options = document.querySelectorAll("#province option");
+        province_options.forEach(function(option) {
+            
+            if (country == "eh" && option.classList.contains("eh")) {
+                option.style.display = "block";
+            } 
+            else if (country == "gre" && option.classList.contains("gre")) {
+                option.style.display = "block";
+            } 
+            else {
+                option.style.display = "none";
+            }
+        });
+    } else {
+        document.getElementById("province_div").style.display = "none";
+        document.getElementById("city_div").style.display = "none";
+    }
+});
+
+
+
+      //cities
+
+
+      document.getElementById("province").addEventListener('input', function() {
+      let province = this.value;
+
+      
+      if (province == "nav" || province == "jon") {
+        
+        document.getElementById("city_div").style.display = "block";
+        let city_options = document.querySelectorAll("#city option");
+        city_options.forEach(function(option) {
+
+          if (province == "nav" && option.classList.contains("nav")) {
+                option.style.display = "block";
+            } 
+            else if (province == "jon" && option.classList.contains("jon")) {
+                option.style.display = "block";
+            } 
+            else {
+                option.style.display = "none";
+            }
+        });
+      } else {
+          document.getElementById("city_div").style.display = "none";
+      }
+  });
 
 
 
 
 
-      });
 
+    //dark mode
+
+
+    function dark_light() {
+    if (document.getElementById("form").style.backgroundColor == "rgb(42, 42, 42)") {
+        
+        document.getElementById("form").style.backgroundColor = "#f9f9f9";
+        document.getElementById("form").style.color = "black";        
+        document.getElementById("form-container").style.backgroundColor = "white";
+
+        document.getElementById("dark_light").textContent = "Dark";
+    } 
+    else {
+        document.getElementById("form").style.backgroundColor = "rgb(42, 42, 42)";
+        document.getElementById("form").style.color = "white";
+        document.getElementById("form-container").style.backgroundColor = "#444";
+        
+        document.getElementById("dark_light").textContent = "Light";
+    }
+}
 
 
 
@@ -155,8 +255,6 @@
 
 
     </script>
-
-
 
 </body>
 </html>

@@ -64,3 +64,11 @@ body{
     }
 
 }
+
+button:hover{
+    cursor: pointer;
+}
+
+#form{
+    height: 100vh;
+}

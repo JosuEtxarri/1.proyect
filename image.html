@@ -21,22 +21,51 @@
         <div>
             <button>Mode</button>
         </div>
+        <div>
+          <button onclick="dark_light()" id="dark_light">Dark</button>
+      </div>
     </nav>
     
-    <div class="one">
-        <h4>
-            Magic Button: Create & Change Image
-        </h4>
-        <button>Change Image!</button>
-        <div></div>
+    <div id="form">
+        <div class="one" id="form-container">
+            <h4>
+                Magic Button: Create & Change Image
+            </h4>
+            <button>Change Image!</button>
+            <div></div>
+        </div>
+
+        <div class="one" id="form-container2">
+            <h4>
+                AutoLoading
+            </h4>
+            <div></div>
+        </div>
     </div>
 
-    <div class="one">
-        <h4>
-            AutoLoading
-        </h4>
-        <div></div>
-    </div>
+
+   <script>
+    function dark_light() {
+        if (document.getElementById("form").style.backgroundColor == "rgb(42, 42, 42)") {
+            
+            document.getElementById("form").style.backgroundColor = "#f9f9f9";
+            document.getElementById("form").style.color = "black";        
+            document.getElementById("form-container").style.backgroundColor = "white";
+            document.getElementById("form-container2").style.backgroundColor = "white";
+    
+            document.getElementById("dark_light").textContent = "Dark";
+        } 
+        else {
+            document.getElementById("form").style.backgroundColor = "rgb(42, 42, 42)";
+            document.getElementById("form").style.color = "white";
+            document.getElementById("form-container").style.backgroundColor = "#444";
+            document.getElementById("form-container2").style.backgroundColor = "#444";
+            
+            document.getElementById("dark_light").textContent = "Light";
+        }
+    }
+
+    </script> 
 
 
 </body>
