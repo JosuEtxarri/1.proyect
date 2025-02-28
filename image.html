@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="image.css">
 </head>
-<body>
+<body onload="changing_img()">
     
     <nav>
         <div>
@@ -31,21 +31,43 @@
             <h4>
                 Magic Button: Create & Change Image
             </h4>
-            <button>Change Image!</button>
-            <div></div>
+            <button onclick="static()">Change Image!</button>
+            <div id="static_img"></div>
         </div>
 
         <div class="one" id="form-container2">
             <h4>
                 AutoLoading
             </h4>
-            <div></div>
+            <div id="changing_img"></div>
         </div>
     </div>
 
 
    <script>
-    function dark_light() {
+   
+    function static() {
+
+        let imgs = ["/images/image1.png", "/images/image2.png", "/images/image3.jpeg", "/images/image4.webp", "/images/image5.jpg", "/images/image6.jpg"];
+        let random = Math.floor(Math.random() * (5 - 0));
+        
+        document.getElementById("static_img").innerHTML = "<img src= \""+imgs[random]+" \">"
+
+    }
+
+        function changing_img() {
+
+        let imgs = ["/images/image1.png", "/images/image2.png", "/images/image3.jpeg", "/images/image4.webp", "/images/image5.jpg", "/images/image6.jpg"];
+        let random = Math.floor(Math.random() * (5 - 0));
+        
+        document.getElementById("changing_img").innerHTML = "<img src= \""+imgs[random]+" \">"
+        setTimeout(changing_img, 300);
+
+    }
+    
+    // dark mode
+   
+   function dark_light() {
         if (document.getElementById("form").style.backgroundColor == "rgb(42, 42, 42)") {
             
             document.getElementById("form").style.backgroundColor = "#f9f9f9";
@@ -64,6 +86,7 @@
             document.getElementById("dark_light").textContent = "Light";
         }
     }
+
 
     </script> 
 
